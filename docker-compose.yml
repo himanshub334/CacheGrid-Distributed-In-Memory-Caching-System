@@ -1,0 +1,7 @@
+services:
+  benchmark:
+    image: python:3.11-slim
+    working_dir: /workspace
+    volumes:
+      - .:/workspace
+    command: sh -c "pip install -r benchmark/requirements.txt && python benchmark/run_benchmark.py --operations 20000 --keys 2000 --output results.csv"
